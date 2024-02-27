@@ -11,3 +11,14 @@
  * For this problem, you should use the NOT IN clause;
  * in problem 05b you will use the LEFT JOIN clause.
  */
+SELECT
+    q.last_name, q.first_name
+FROM
+    actor q
+LEFT JOIN
+    customer c ON q.first_name = c.first_name AND q.last_name = c.last_name
+WHERE
+    c.first_name IS NULL AND c.last_name IS NULL
+ORDER BY
+    q.last_name, q.first_name;
+
